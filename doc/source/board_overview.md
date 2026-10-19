@@ -1,17 +1,17 @@
 # Board overview
 
 Jetson Orin Baseboard is an open hardware board design supporting NVIDIA Jetson Orin NX and Orin Nano family of SoMs.
-The board design files were created in KiCad 8.x.
+The board design files were created in KiCad 9.x.
 The board is a versatile development kit which can be easily adopted in order to make it usable in commercial applications for autonomous vehicles, industry, agriculture, medicine or space.
-You can find out more about the Jetson Orin Baseboard in this [blog article](https://antmicro.com/blog/2023/05/jetson-orin-baseboard-1-1-with-orin-nano/), or by visiting Antmicro's portals listed below:
+You can find out more about the Jetson Orin Baseboard in this [blog article](https://quadro.com/blog/2023/05/jetson-orin-baseboard-1-1-with-orin-nano/), or by visiting Quadro's portals listed below:
 
-* [Open Hardware Portal](https://openhardware.antmicro.com/boards/jetson-orin-baseboard/)
-* [System Designer](https://designer.antmicro.com/library/devices/jetson-orin-baseboard)
-* [Open Source Portal](https://opensource.antmicro.com/projects/jetson-orin-baseboard/)
+* [Open Hardware Portal](https://openhardware.quadro.com/boards/jetson-orin-baseboard/)
+* [System Designer](https://designer.quadro.com/library/devices/jetson-orin-baseboard)
+* [Open Source Portal](https://opensource.quadro.com/projects/jetson-orin-baseboard/)
 
 They provide 3D renders and the board stackup definition, as well as an interactive preview of the board schematic.
 
-You can also browse board-specific assets in the GitHub [releases](https://github.com/antmicro/jetson-orin-baseboard/releases) section.
+You can also browse board-specific assets in the GitHub [releases](https://github.com/quadro/jetson-orin-baseboard/releases) section.
 The assets provided here include PDF schematics and mechanical (STEP) models of the board assemblies in certain revisions.
 
 ## IO map
@@ -46,7 +46,7 @@ You can power the board via the Gigabit Ethernet port ([`J6`](#J6)) using a PoE 
 ### 3. USB-C Power Delivery
 * USB Power Delivery PD is available on two USB-C ports:
     * USB-C0 ([`J4`](#J4)) general purpose USB port
-    * USB-C3 ([`J3`](#J3)) debug console interface port (disabled in the [shared](https://github.com/antmicro/antmicro-jetson-orin-baseboard-tps65988-config) controller configuration)
+    * USB-C3 ([`J3`](#J3)) debug console interface port (disabled in the [shared](https://github.com/quadro/quadro-jetson-orin-baseboard-tps65988-config) controller configuration)
 
 Those ports are maintained by the on-board USB-C Power Delivery controller (Texas Instruments/[TPS65988](https://www.ti.com/product/TPS65988/part-details/TPS65988DHRSHR)).
 This controller needs to be configured in order to make it implement one of the desired power source/sink negotiation scenarios.
@@ -61,12 +61,12 @@ If you plan to power up the Jetson Orin Baseboard through the USB PD source, mak
 
 The on-board USB-C Power Delivery controller (Texas Instruments/[TPS65988](https://www.ti.com/product/TPS65988/part-details/TPS65988DHRSHR)) can be configured for a specific power profile by writing a binary configuration file to an SPI flash.
 You can generate your own configuration file with the [TPS6598X-CONFIG](https://www.ti.com/tool/TPS6598X-CONFIG) utility provided by Texas Instruments.
-Please refer to the Jetson Orin Baseboard [schematics](https://github.com/antmicro/jetson-orin-baseboard/blob/main/doc/jetson-orin-baseboard-schematic.pdf) to identify the USB port and power supply rail associated with it to generate a valid power profile setting while using the `TPS6598X-CONFIG` tool.
+Please refer to the Jetson Orin Baseboard [schematics](https://github.com/quadro/jetson-orin-baseboard/blob/main/doc/jetson-orin-baseboard-schematic.pdf) to identify the USB port and power supply rail associated with it to generate a valid power profile setting while using the `TPS6598X-CONFIG` tool.
 Also please refer to the [TPS65987DDH and TPS65988DH Host Interface Technical Reference Manual](https://www.ti.com/lit/ug/slvubh2b/slvubh2b.pdf) for further details.
 
 There are several ways to write the USB-C PD configuration to the on-board controller:
 * Via an external SPI Flash programmer connected to the [`J9`](#J9)
-* Via the [antmicro-jetson-orin-baseboard-tps65988-config](https://github.com/antmicro/antmicro-jetson-orin-baseboard-tps65988-config) tool
+* Via the [quadro-jetson-orin-baseboard-tps65988-config](https://github.com/quadro/quadro-jetson-orin-baseboard-tps65988-config) tool
   * From the Jetson Orin SoM BSP (user space)
   * From the host (PC) via the USB-C ([`J3`](#J3)) debug console interface port (in baseboard revisions >= 1.1.9)
 
@@ -79,7 +79,7 @@ You will need the following pieces of hardware to proceed with writing the USB-C
 
 * A computer running Linux (the following procedure has been tested with Ubuntu 23 and Debian 11 distributions)
 * USB dongle based on FTDI/(FT4232H-56Q) [FTDI4232](https://ftdichip.com/products/ft4232hq/).
-  We suggest using Antmicro's open hardware [Debug Toolkit](https://github.com/antmicro/ftdi-toolkit) to simplify the setup (the cable mentioned below connects its J2 straight with Jetson Orin Baseboard's J9)
+  We suggest using Quadro's open hardware [Debug Toolkit](https://github.com/quadro/ftdi-toolkit) to simplify the setup (the cable mentioned below connects its J2 straight with Jetson Orin Baseboard's J9)
 * 10 Pin Tag-Connect [TC2050-IDC-NL](https://www.tag-connect.com/product/tc2050-idc-nl-10-pin-no-legs-cable-with-ribbon-connector) cable
   This cable should be connected to the signals from FTDI FT4232 according to the following table:
 
@@ -98,10 +98,10 @@ You will need the following pieces of hardware to proceed with writing the USB-C
 
 #### 2. Prepare the FT4232 dongle
 
-  *  Set the [Debug Toolkit](https://github.com/antmicro/ftdi-toolkit) Channel A to 3.3V logic with a jumper.
+  *  Set the [Debug Toolkit](https://github.com/quadro/ftdi-toolkit) Channel A to 3.3V logic with a jumper.
   *  Enable JTAG VCC with a jumper.
   *  Select `SPI/SWD` interface mode for channel A with a jumper.
-  *  Connect the 10 Pin Tag-Connect cable to the Debug Toolkit assuming the connection mapping specified in the table above (for Antmicro Debug Toolkit - connect to J2 connector).
+  *  Connect the 10 Pin Tag-Connect cable to the Debug Toolkit assuming the connection mapping specified in the table above (for Quadro Debug Toolkit - connect to J2 connector).
 
 :::{figure-md}
 ![](img/debug_toolkit_jumper_configuration.png)
@@ -165,7 +165,7 @@ Erase/write done.
 
 ### TPS65988-config tool from Jetson Orin user space
 
-The TPS65988-config flashing script can be found in the [antmicro-jetson-orin-baseboard-tps65988-config](https://github.com/antmicro/antmicro-jetson-orin-baseboard-tps65988-config) repository.
+The TPS65988-config flashing script can be found in the [quadro-jetson-orin-baseboard-tps65988-config](https://github.com/quadro/quadro-jetson-orin-baseboard-tps65988-config) repository.
 
 #### 1. Prepare hardware
 
@@ -175,12 +175,12 @@ Internet connection is also suggested.
 
 #### 2. Install dependencies
 Log into Jetson Orin module.
-Clone the [antmicro-jetson-orin-baseboard-tps65988](https://github.com/antmicro/antmicro-jetson-orin-baseboard-tps65988-config) repository and install the `smbus2` package using `pip`
+Clone the [quadro-jetson-orin-baseboard-tps65988](https://github.com/quadro/quadro-jetson-orin-baseboard-tps65988-config) repository and install the `smbus2` package using `pip`
 
 ```
-git clone https://github.com/antmicro/antmicro-jetson-orin-baseboard-tps65988-config.git
+git clone https://github.com/quadro/quadro-jetson-orin-baseboard-tps65988-config.git
 pip3 install smbus2
-cd antmicro-jetson-orin-baseboard-tps65988-config
+cd quadro-jetson-orin-baseboard-tps65988-config
 ```
 
 #### 3. Flash the config
@@ -211,12 +211,12 @@ This option allows for flashing the USB-C Power Delivery controller without SoM 
 
 On the host PC:
 
-Clone the [antmicro-jetson-orin-baseboard-tps65988-config](https://github.com/antmicro/antmicro-jetson-orin-baseboard-tps65988-config) repository and install the `smbus2` package with `pip`
+Clone the [quadro-jetson-orin-baseboard-tps65988-config](https://github.com/quadro/quadro-jetson-orin-baseboard-tps65988-config) repository and install the `smbus2` package with `pip`
 
 ```
-git clone https://github.com/antmicro/antmicro-jetson-orin-baseboard-tps65988-config.git
+git clone https://github.com/quadro/quadro-jetson-orin-baseboard-tps65988-config.git
 pip3 install smbus2
-cd antmicro-jetson-orin-baseboard-tps65988-config
+cd quadro-jetson-orin-baseboard-tps65988-config
 ```
 
 #### 3. Write the configuration
@@ -235,6 +235,32 @@ Performing cold reset
 Reverting FT230X to UART configuration
 ```
 The [`D3`](#D3) RX LED should turn off indicating end of communication.
+```
+
+## CAN-FD interface
+
+The baseboard features an onboard automotive-grade **CAN-FD** physical layer supporting data rates up to 5 Mbps for direct integration with robotics, autonomous systems, and industrial machinery.
+
+### 1. Transceiver architecture
+* **Transceiver IC**: Texas Instruments [`TCAN1044V-Q1`](https://www.ti.com/product/TCAN1044V-Q1) (`U49`)
+* **Logic Level**: 3.3V $V_{IO}$ directly interfacing with Jetson Orin SoM native CAN controller lines (`CAN_TX` on Pin 145, `CAN_RX` on Pin 143) without level translation
+* **Bus Voltage**: 5V $V_{CC}$ transceiver driver stage compliant with ISO 11898-2:2016 physical layer standards
+* **Protection & Filtering**:
+  * Automotive dual bidirectional TVS diode array (`D64`, `PESD2CANFD24V-T`) for $\pm 30\text{ kV}$ ESD and surge clamping
+  * Split bus termination ($60.4\ \Omega + 60.4\ \Omega$ with $4.7\text{ nF}$ common-mode capacitor to GND)
+
+### 2. CAN-FD connector ([`J16`](#J16)) pinout
+<a id="J16"></a>
+
+The CAN-FD port is routed to a 4-pin JST-SH connector ([`J16`](#J16), `SM04B-SRSS-TB-LF-SN`) compatible with Dronecode and standard micro-CAN wiring harnesses:
+
+| Pin | Net Name | Description |
+|:---:|:---:|:---|
+| 1 | `+5V` | 5V auxiliary power output |
+| 2 | `CAN_H` | CAN bus high differential line |
+| 3 | `CAN_L` | CAN bus low differential line |
+| 4 | `GND` | Ground reference |
+| MP | `GND` | Connector shield / mechanical retention |
 
 ## Mechanics
 
@@ -243,5 +269,5 @@ The overall height of the set depends on the cooling module attached.
 The base setup with a default cooling module is 37 mm or 1.45 inch tall.
 The KiCad PCB design files include mechanical layers with dimensions specified for the fastening holes and notable components.
 The board with the Jetson Module, M.2 storage and cooling module weighs 164g (5.78oz).
-The mechanical STEP models of the Jetson Orin Baseboard in notable revisions are provided in the [releases](https://github.com/antmicro/jetson-orin-baseboard/releases/) sections available on GitHub.
+The mechanical STEP models of the Jetson Orin Baseboard in notable revisions are provided in the [releases](https://github.com/quadro/jetson-orin-baseboard/releases/) sections available on GitHub.
 

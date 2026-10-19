@@ -1,6 +1,6 @@
 # Revision changelog
 
-This chapter provides a brief changelog along with comments and remarks specified for each board [release](https://github.com/antmicro/jetson-orin-baseboard/releases) defined in the GitHub repository.
+This chapter provides a brief changelog along with comments and remarks specified for each board [release](https://github.com/quadro/jetson-orin-baseboard/releases) defined in the GitHub repository.
 
 ## 1.3.4
 

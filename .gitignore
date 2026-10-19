@@ -33,3 +33,15 @@ fp-info-cache
 # Documentation artifacts
 build 
 .kiri
+
+# Reports, locks, and logs
+*.rpt
+*.lck
+*.lck*
+~*.lck
+~*
+logs/
+.history/
+__pycache__/
+*.pyc
+

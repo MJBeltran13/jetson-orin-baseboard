@@ -1,9 +1,9 @@
-# Antmicro Baseboard for Jetson Orin
+# Quadro Baseboard for Jetson Orin
 
-Copyright (c) 2022-2026 [Antmicro](https://www.antmicro.com)
+Copyright (c) 2022-2026 [Quadro](https://www.quadro.com)
 
-[![image](https://img.shields.io/badge/View%20on-Antmicro%20Open%20Hardware%20Portal-332d37?style=flat-square)](https://openhardware.antmicro.com/boards/jetson-orin-baseboard)
-[![image](https://img.shields.io/badge/View%20on-Antmicro%20Open%20Source%20Portal-332d37?style=flat-square)](https://opensource.antmicro.com/projects/jetson-orin-baseboard)
+[![image](https://img.shields.io/badge/View%20on-Quadro%20Open%20Hardware%20Portal-332d37?style=flat-square)](https://openhardware.quadro.com/boards/jetson-orin-baseboard)
+[![image](https://img.shields.io/badge/View%20on-Quadro%20Open%20Source%20Portal-332d37?style=flat-square)](https://opensource.quadro.com/projects/jetson-orin-baseboard)
 
 ![](img/jetson-orin-baseboard-photo.png)
 
@@ -27,6 +27,7 @@ The design files were prepared in KiCad 9.x.
 * M.2 key M
 * M.2 key E
 * 1Gb Ethernet with PoE
+* CAN-FD interface (5 Mbps) with onboard automotive transceiver
 * Custom expansion connector
 * RTC battery backup
 
@@ -36,19 +37,19 @@ The main directory contains KiCad PCB project files, a LICENSE, and a README.
 The remaining files are stored in the following directories:
 
 * `img` - contains graphics for this README
-* `doc` - contains [documentation and usage instructions](https://antmicro.github.io/jetson-orin-baseboard)
+* `doc` - contains [documentation and usage instructions](https://quadro.github.io/jetson-orin-baseboard)
 
-The board exposes MIPI CSI-2 interfaces using unified 50-pin connectors that are electrically compatible with a variety of video accessories created by Antmicro:
+The board exposes MIPI CSI-2 interfaces using unified 50-pin connectors that are electrically compatible with a variety of video accessories created by Quadro:
 
-* [GMSL Deserializer](https://github.com/antmicro/gmsl-deserializer)
-* [SDI-MIPI Video converter](https://github.com/antmicro/sdi-mipi-video-converter)
-* [HDMI-MIPI bridge](https://github.com/antmicro/hdmi-mipi-bridge)
-* [CVBS-MIPI bridge](https://github.com/antmicro/cvbs-mipi-bridge)
-* [OV5640 Dual camera board](https://github.com/antmicro/ov5640-dual-camera-board)
-* [OV9281 Dual camera board](https://github.com/antmicro/ov9281-camera-board)
-* [Storage Expansion board](https://github.com/antmicro/job-storage-expansion)
-* [FRAMOS camera adapter](https://github.com/antmicro/framos-csi-adapter)
-* [Allied Vision Alvium Camera Adapter](https://github.com/antmicro/alvium-flexible-csi-adapter)
+* [GMSL Deserializer](https://github.com/quadro/gmsl-deserializer)
+* [SDI-MIPI Video converter](https://github.com/quadro/sdi-mipi-video-converter)
+* [HDMI-MIPI bridge](https://github.com/quadro/hdmi-mipi-bridge)
+* [CVBS-MIPI bridge](https://github.com/quadro/cvbs-mipi-bridge)
+* [OV5640 Dual camera board](https://github.com/quadro/ov5640-dual-camera-board)
+* [OV9281 Dual camera board](https://github.com/quadro/ov9281-camera-board)
+* [Storage Expansion board](https://github.com/quadro/job-storage-expansion)
+* [FRAMOS camera adapter](https://github.com/quadro/framos-csi-adapter)
+* [Allied Vision Alvium Camera Adapter](https://github.com/quadro/alvium-flexible-csi-adapter)
 
 ## Licensing
 

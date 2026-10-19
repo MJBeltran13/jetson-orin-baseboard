@@ -8,8 +8,8 @@
 		(title "Jetson Orin Baseboard")
 		(date "2025-03-12")
 		(rev "1.3.4")
-		(company "Antmicro Ltd")
-		(comment 1 "www.antmicro.com")
+		(company "Quadro")
+		(comment 1 "www.quadro.com")
 	)
 	(lib_symbols
 		(symbol "antmicroMechanicalParts:Spacer_Drill3.7mm_H6.5mm_9774065151R"
@@ -89,7 +89,7 @@
 					(justify left bottom)
 				)
 			)
-			(property "Author" "Antmicro"
+			(property "Author" "Quadro"
 				(at 15.24 -20.32 0)
 				(effects
 					(font
@@ -222,7 +222,7 @@
 					(hide yes)
 				)
 			)
-			(property "Author" "Antmicro"
+			(property "Author" "Quadro"
 				(at 8.89 -7.62 0)
 				(effects
 					(font
@@ -25616,7 +25616,7 @@
 			"AAAAAAAAAAAAAAAAAAAAAAAAAAA4C9VptvhN78OkAAAAAElFTkSuQmCC"
 		)
 	)
-	(text "github.com/antmicro/jetson-orin-baseboard"
+	(text "github.com/quadro/jetson-orin-baseboard"
 		(exclude_from_sim no)
 		(at 14.605 31.115 0)
 		(effects
@@ -25701,7 +25701,7 @@
 				(hide yes)
 			)
 		)
-		(property "Author" "Antmicro"
+		(property "Author" "Quadro"
 			(at 375.92 245.11 0)
 			(effects
 				(font
@@ -25818,7 +25818,7 @@
 				(justify left)
 			)
 		)
-		(property "Author" "Antmicro"
+		(property "Author" "Quadro"
 			(at 383.54 236.22 0)
 			(effects
 				(font
@@ -25935,7 +25935,7 @@
 				(justify left)
 			)
 		)
-		(property "Author" "Antmicro"
+		(property "Author" "Quadro"
 			(at 383.54 248.92 0)
 			(effects
 				(font
@@ -26052,7 +26052,7 @@
 				(justify left)
 			)
 		)
-		(property "Author" "Antmicro"
+		(property "Author" "Quadro"
 			(at 383.54 242.57 0)
 			(effects
 				(font
@@ -26169,7 +26169,7 @@
 				(justify left)
 			)
 		)
-		(property "Author" "Antmicro"
+		(property "Author" "Quadro"
 			(at 383.54 255.27 0)
 			(effects
 				(font
@@ -26541,6 +26541,82 @@
 			(project "jetson-orin-baseboard"
 				(path "/4b393452-b11e-416e-bc83-918ae3cab2f1"
 					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 203.2 228.6)
+		(size 12.7 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "1e9a7b21-4f88-4c3d-b2a1-0e7854619d80")
+		(property "Sheetname" "CAN"
+			(at 203.2 227.8884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "can.kicad_sch"
+			(at 203.2 241.8846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "jetson-orin-baseboard"
+				(path "/4b393452-b11e-416e-bc83-918ae3cab2f1"
+					(page "11")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 139.7 254)
+		(size 12.7 12.7)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "2f8b8c32-5e99-4d4e-c3b2-1f8965720e91")
+		(property "Sheetname" "Expansion"
+			(at 139.7 253.2884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "expansion.kicad_sch"
+			(at 139.7 267.2846 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "jetson-orin-baseboard"
+				(path "/4b393452-b11e-416e-bc83-918ae3cab2f1"
+					(page "12")
 				)
 			)
 		)

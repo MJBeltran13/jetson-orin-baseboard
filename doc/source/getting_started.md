@@ -1,6 +1,6 @@
 # Getting started guide
 
-This manual will guide you through the initial setup of the open hardware [Jetson Orin Baseboard](https://github.com/antmicro/jetson-orin-baseboard).
+This manual will guide you through the initial setup of the open hardware [Jetson Orin Baseboard](https://github.com/quadro/jetson-orin-baseboard).
 It describes the basic steps required to assemble the board with required peripheral accessories, write a compiled Board Support Package (BSP) to the processing module and get it booted.
 If you want to learn more about the Jetson Orin Baseboard itself, go to the [Board Overview](./board_overview.md) section.
 That section also includes an [I/O map](./board_overview.md#io-map) that may come in handy when locating interface connectors mentioned in this guide.
@@ -19,7 +19,7 @@ The Jetson Orin Baseboard supports three power supply scenarios:
 
 * USB-C port ([`J4`](#J4)) with charger supporting Power Delivery (PD) negotiation.
   That is the easiest and most recommended solution for starters.
-  The boards produced and distributed by [CircuitHub](https://antmicro-hardware.circuithub.com) come with pre-configured on-board USB-C Power Delivery controller which enables power sink mode on `USB-C 0` port.
+  The boards produced and distributed by [CircuitHub](https://quadro-hardware.circuithub.com) come with pre-configured on-board USB-C Power Delivery controller which enables power sink mode on `USB-C 0` port.
   If you have built the board from scratch, you need to [configure the USB-C Power Delivery controller](board_overview.md#usb-c-power-delivery-controller-configuration) as described in the Board Overview section.
   You can use a typical smartphone or laptop USB-C charger utilizing Power Delivery protocol with support for 15V or 20V supply.
 
@@ -132,7 +132,7 @@ Jetson Orin Baseboard ready for flashing.
 
 ## Flash the BSP image
 
-Jetson Orin Baseboard comes with a reference BSP image of a Yocto-based system built on top of the [meta-antmicro](https://github.com/antmicro/meta-antmicro) layer.
+Jetson Orin Baseboard comes with a reference BSP image of a Yocto-based system built on top of the [meta-quadro](https://github.com/quadro/meta-quadro) layer.
 This BSP will let you verify the basic functionality of the board.
 The following steps will guide you through the process of downloading and flashing a precompiled Board Support Package (BSP) for the Jetson Orin Baseboard.
 
@@ -141,7 +141,7 @@ The following steps will guide you through the process of downloading and flashi
 First, create a workspace directory that will contain all of the files you will need for flashing:
 
 ```bash
-export WORK="$HOME/antmicro-job-bsp"
+export WORK="$HOME/quadro-job-bsp"
 mkdir -p $WORK
 cd $WORK
 ```
@@ -152,31 +152,31 @@ The latest available reference BSP image is based on JetPack 6.1.
 
 ````{tab} Orin NX 16 GB
 ```bash
-wget https://dl.antmicro.com/projects/nvidia-jetson-orin-baseboard-demo-p3768-0000-p3767-0000.rootfs-20250709101446.tegraflash.tar.gz
+wget https://dl.quadro.com/projects/nvidia-jetson-orin-baseboard-demo-p3768-0000-p3767-0000.rootfs-20250709101446.tegraflash.tar.gz
 ```
 ````
 
 ````{tab} Orin NX 8 GB
 ```bash
-wget https://dl.antmicro.com/projects/nvidia-jetson-orin-baseboard-demo-p3768-0000-p3767-0001.rootfs-20250709101437.tegraflash.tar.gz
+wget https://dl.quadro.com/projects/nvidia-jetson-orin-baseboard-demo-p3768-0000-p3767-0001.rootfs-20250709101437.tegraflash.tar.gz
 ```
 ````
 
 ````{tab} Orin Nano 8 GB
 ```bash
-wget https://dl.antmicro.com/projects/nvidia-jetson-orin-baseboard-demo-p3768-0000-p3767-0003.rootfs-20250709101435.tegraflash.tar.gz
+wget https://dl.quadro.com/projects/nvidia-jetson-orin-baseboard-demo-p3768-0000-p3767-0003.rootfs-20250709101435.tegraflash.tar.gz
 ```
 ````
 
 ````{tab} Orin Nano 4 GB
 ```bash
-wget https://dl.antmicro.com/projects/nvidia-jetson-orin-baseboard-demo-p3768-0000-p3767-0004.rootfs-20250709102320.tegraflash.tar.gz
+wget https://dl.quadro.com/projects/nvidia-jetson-orin-baseboard-demo-p3768-0000-p3767-0004.rootfs-20250709102320.tegraflash.tar.gz
 ```
 ````
 
 ````{tab} Orin Nano 8 GB (included in the NVIDIA Developer Kit)
 ```bash
-wget https://dl.antmicro.com/projects/nvidia-jetson-orin-baseboard-demo-jetson-orin-nano-devkit-nvme.rootfs-20260428121811.tegraflash.tar.gz
+wget https://dl.quadro.com/projects/nvidia-jetson-orin-baseboard-demo-jetson-orin-nano-devkit-nvme.rootfs-20260428121811.tegraflash.tar.gz
 ```
 ````
 
@@ -260,7 +260,7 @@ That will give you an insight into the progress and debug log messages displayed
 Open another terminal instance on your PC and navigate to the directory which holds the downloaded and unpacked BSP, as described in the [Get the BSP image](#get-the-bsp-image) section.
 
 ```bash
-cd $HOME/antmicro-job-bsp/bsp
+cd $HOME/quadro-job-bsp/bsp
 ```
 
 Make sure your SoM remains in the recovery mode.
@@ -302,9 +302,9 @@ Creating partitions
   [01] name=APP (fills to end)
 Writing partitions
   Writing boot.img (size=37214208) to /dev/sdc2 (size=67108864)...
-  Writing kernel_tegra234-p3767-0000-antmicro-job.dtb (size=333342) to /dev/sdc3 (size=458752)...
+  Writing kernel_tegra234-p3767-0000-quadro-job.dtb (size=333342) to /dev/sdc3 (size=458752)...
   Writing boot.img (size=37214208) to /dev/sdc5 (size=67108864)...
-  Writing kernel_tegra234-p3767-0000-antmicro-job.dtb (size=333342) to /dev/sdc6 (size=458752)...
+  Writing kernel_tegra234-p3767-0000-quadro-job.dtb (size=333342) to /dev/sdc6 (size=458752)...
   Writing esp.img (size=67108864) to /dev/sdc11 (size=67108864)...
   Writing nvidia-jetson-orin-baseboard-demo.ext4 (size=59055800320) to /dev/sdc1 (size=255237365248)...
 [OK: /dev/sdc]

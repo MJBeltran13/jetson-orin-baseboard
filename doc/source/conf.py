@@ -33,7 +33,7 @@ basic_filename = "jetson-orin-baseboard-docs"
 if "tags" in globals() and "internal" in tags:
     basic_filename = f"INTERNAL--{basic_filename}"
     project = f"{project} | INTERNAL"
-authors = "Antmicro"
+authors = "Quadro"
 copyright = f"{authors}, {datetime.now().year}"
 
 # The short X.Y version.
